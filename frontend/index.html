@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Gestionnaire de Tâches</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+	<h1>Gestionnaire de Tâches</h1>
+	
+	<div class="task-controls">
+		<input type="text" id="searchInput" placeholder="Rechercher...">
+		<button id="searchBtn" onclick="searchTasks()">Rechercher</button>
+		<button id="dueSoonBtn" onclick="showDueSoonTasks()">Tâches à échéance proche</button>
+		<button id="completeAllBtn" onclick="completeAllTasks()">Tout marquer comme terminé</button>
+		<button id="resetAllBtn" onclick="resetAllTasks()">Tout réinitialiser</button>
+	</div>
+	
+	<div class="stats" id="stats"></div>
+	
+	<form id="addTaskForm">
+		<input type="text" id="titleInput" placeholder="Titre" required>
+		<textarea id="descriptionInput" placeholder="Description" required></textarea>
+		<input type="date" id="dueDateInput" required>
+		<button type="submit">Ajouter</button>
+	</form>
+	
+	<div id="tasksList"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

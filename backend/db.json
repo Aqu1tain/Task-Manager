@@ -1,0 +1,46 @@
+{
+  "tasks": [
+    {
+      "id": "1337",
+      "title": "Apprendre à dresser mon chat",
+      "description": "Mission impossible : lui faire comprendre que MON canapé n'est pas SON griffoir",
+      "dueDate": "2025-02-01",
+      "completed": false
+    },
+    {
+      "id": "404",
+      "title": "Retrouver les chaussettes perdues",
+      "description": "Enquêter sur la mystérieuse disparition des chaussettes dans la machine à laver. Suspects principaux : le sèche-linge et les gnomes",
+      "dueDate": "2025-01-25",
+      "completed": false
+    },
+    {
+      "id": "42",
+      "title": "Négocier avec les plantes",
+      "description": "Convaincre mes plantes d'intérieur de ne pas mourir cette fois-ci. Leur promettre plus d'eau et d'attention",
+      "dueDate": "2025-01-24",
+      "completed": false
+    },
+    {
+      "id": "007",
+      "title": "Mission infiltration frigo",
+      "description": "Identifier et éliminer les contenants mystérieux au fond du frigo qui datent probablement de 2024",
+      "dueDate": "2025-01-26",
+      "completed": false
+    },
+    {
+      "id": "314",
+      "title": "Devenir influenceur pour chaussettes",
+      "description": "Créer un compte Instagram dédié à mes collections de chaussettes dépareillées. Objectif : 1M followers",
+      "dueDate": "2025-02-14",
+      "completed": false
+    },
+    {
+      "id": "666",
+      "title": "Exorciser l'imprimante",
+      "description": "Elle refuse d'imprimer en noir et blanc alors qu'il manque du cyan. Prévoir eau bénite et manuel technique",
+      "dueDate": "2025-01-30",
+      "completed": false
+    }
+  ]
+}

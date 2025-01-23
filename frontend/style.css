@@ -1,0 +1,231 @@
+:root {
+    --primary: #0f172a;
+    --primary-light: #334155;
+    --bg: #ffffff;
+    --surface: #f1f5f9;
+    --text: #0f172a;
+    --text-light: #475569;
+    --success: #059669;
+    --error: #dc2626;
+    --border: #e2e8f0;
+    --radius: 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Controls Section */
+.task-controls {
+    background: var(--surface);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    border: 2px solid var(--primary);
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--primary);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    outline: none;
+    background: var(--surface);
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary);
+    background: var(--primary);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+}
+
+button:hover {
+    background: var(--bg);
+    color: var(--primary);
+}
+
+#searchInput {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Stats Section */
+.stats {
+    background: var(--surface);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--primary);
+}
+
+.stats h3 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.875rem;
+}
+
+.stats p {
+    color: var(--text);
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Add Task Form */
+#addTaskForm {
+    background: var(--surface);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: grid;
+    gap: 1rem;
+    border: 2px solid var(--primary);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Tasks List */
+.task {
+    background: var(--surface);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: all 0.2s ease;
+    border: 2px solid var(--primary);
+}
+
+.task.completed {
+    background: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.task.completed .task-info h3,
+.task.completed .task-info p,
+.task.completed .task-info small {
+    color: white;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.task-info p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.task-info small {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.task button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-width: 100px;
+}
+
+.task button:last-child {
+    background: var(--error);
+    border-color: var(--error);
+}
+
+.task button:last-child:hover {
+    background: white;
+    color: var(--error);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .task-controls {
+        flex-direction: column;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task button {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.task {
+    animation: slideIn 0.2s ease-out;
+}
