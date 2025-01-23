@@ -1,3 +1,9 @@
+/*
+Pretty long CSS, I wanted to make sure the app looks good and is (almost) responsive on all devices.
+Choose to go with a brutalist-minimalist design, with a light theme. (Sharp edges, and a lot of white space)
+I used CSS variables to make it easier to change the theme in the future.
+*/
+
 :root {
     --primary: #0f172a;
     --primary-light: #334155;

@@ -11,7 +11,7 @@ async function loadStats() {
            Terminées: ${stats.completed} |
            En cours: ${stats.pending} |
            En retard: ${stats.overdue}</p>
-    `;
+    `; // I hate putting HTML in my JS, but anw
 }
 
 async function loadTasks() {
@@ -24,12 +24,12 @@ function displayTasks(tasks) {
     const tasksList = document.getElementById('tasksList');
     tasksList.innerHTML = '';
     
-    tasks.forEach(task => {
+    tasks.forEach(task => { // Loops over all the tasks, and display them accordingly
         const taskElement = document.createElement('div');
         taskElement.className = `task ${task.completed ? 'completed' : ''}`;
         
         const completeBtn = document.createElement('button');
-        task.completed ? completeBtn.textContent = 'Réinitialiser' : completeBtn.textContent = 'Terminer';
+        task.completed ? completeBtn.textContent = 'Réinitialiser' : completeBtn.textContent = 'Terminer'; // Changes with state
         completeBtn.addEventListener('click', () => completeTask(task.id));
         
         const deleteBtn = document.createElement('button');
@@ -50,6 +50,7 @@ function displayTasks(tasks) {
     });
 }
 
+// Lot of small utility functions, to handle fetching and displaying tasks
 async function searchTasks() {
     const query = document.getElementById('searchInput').value;
     const response = await fetch(`${API_URL}/tasks/search?query=${query}`);
@@ -91,6 +92,7 @@ async function completeTask(id) {
     loadStats();
 }
 
+// Handle form submission, adds a new task
 document.getElementById('addTaskForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -113,7 +115,7 @@ document.getElementById('addTaskForm').addEventListener('submit', async (e) => {
 });
 
 // Event listeners
-document.getElementById('searchInput').addEventListener('input', searchTasks);
+document.getElementById('searchInput').addEventListener('input', searchTasks); // To make the search dynamic, disable if you want to search on submit
 document.getElementById('searchBtn').addEventListener('click', searchTasks);
 document.getElementById('dueSoonBtn').addEventListener('click', showDueSoonTasks);
 document.getElementById('completeAllBtn').addEventListener('click', completeAllTasks);
